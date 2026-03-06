@@ -1,0 +1,298 @@
+html, html * {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+body {
+    margin: 0;
+    background-color: hsl(60, 7%, 92%);
+    font-family: Tahoma;
+}
+body.gallery {
+    background-color: white;
+}
+body.prod {
+    background-color: #92B5B1;
+}
+.page {
+    width: 90%;
+    margin: 0 auto;
+}
+.page.about {
+    padding-top: 100vh;
+}
+header {
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    background-image: url("pic/x.mp4");
+    overflow: hidden;
+}
+.headerAbout {
+    position: fixed;
+	top: 0;
+    left: 0;
+	animation: headerAnime linear forwards;
+	animation-timeline: scroll();
+	animation-range: 0vh 90vh;
+}
+@keyframes headerAnime {
+	from {
+		background-position: auto 0;
+        /* height: 100vh; */
+	}
+	to {
+		background-position: auto 100%;
+		height: 10vh;
+	}
+}
+header.gallery, header.prod {
+    position: initial;
+    height: auto;
+    background-image: none;
+}
+#video {
+    object-fit: cover;
+    max-width: 100%;
+    min-height: 100vh;
+}
+.folder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+header hgroup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+.hgroupAbout {
+    position: static;
+    width: 90%;
+    margin: 0 auto;
+}
+header #logo {
+    width: 60px;
+    height: auto;
+    margin-left: 20px;
+}
+header h1 {
+    font-size: 50px;
+    margin: 0 100px 0 20px;
+    color: black;
+}
+header nav a {
+    margin-right: 40px;
+}
+header nav a.active {
+    font-weight: bold;
+}
+hgroup.gallery, hgroup.prod {
+    position: initial;
+}
+#login {
+    margin: 0 20px 0 auto;
+    text-decoration: underline;
+    cursor: pointer;
+}
+main.gallery {
+    display: flex;
+    margin-top: 20px;
+}
+main.gallery aside {
+    width: 20%;
+    min-width: 200px;
+}
+main.gallery h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 120%;
+}
+#galleryMenu {
+    position: sticky;
+    top: 0;
+    width: fit-content;
+    margin: 0 auto;
+}
+#galleryMenu a {
+    display: block;
+    padding: 10px 0;
+}
+#galleryContent {
+    width: 300px;
+    flex-grow: 1;
+    overflow: hidden;
+}
+#galleryContent h1 {
+    font-size: 130%;
+}
+.galleryPic {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3px;
+}
+.galleryPic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+article {
+    display: flex;
+    margin-top: 40px;
+}
+article:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.articleImg {
+    width: 45%;
+}
+article h1 {
+    font-size: 210%;
+    margin: 0 0 10px 0;
+}
+article .content {
+    margin: 0 20px;
+}
+footer {
+    background-color: hsl(60, 20%, 85%);
+    text-align: center;
+    padding: 3px 0;
+    margin-top: 30px;
+}
+main.prod {
+    width: fit-content;
+    margin: 0 auto;
+}
+main.prod aside {
+    border: 1px solid green;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 150px;
+    height: 200px;
+}
+#prodContent h1 {
+    font-size: 180%;
+    text-align: center;
+}
+.prodContentStuff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.stuff {
+    border-radius: 10px;
+    width: 350px;
+    height: 450px;
+    margin-right: 25px;
+    overflow: hidden;
+    background-color: white;
+}
+.stuff:last-child {
+    margin-right: 0;
+}
+.stuffPic {
+    width: auto;
+    height: 60%;
+    object-fit: cover;
+}
+.stuffNotes {
+    width: 100%;
+    height: 100%;
+    padding: 5px 20px;
+    font-size: 90%;
+}
+.stuffNotes h2 {
+    font-size: 140%;
+    margin: 5px 0;
+}
+.stuffNotes a {
+    font-weight: bold;
+}
+footer.prod {
+    background-color: #aadad4;
+    border-radius: 50px 50px 0 0;
+    height: 50px;
+}
+.backing {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(29, 25, 25, 0.8);
+    z-index: 10;
+}
+#loginForm {
+    display: none;
+    border: 1px solid rgb(70, 70, 70);
+    background-color: white;
+    color: black;
+    --width: 400px;
+    width: var(--width);
+    --height: 430px;
+    height: var(--height);
+    position: absolute;
+    top: calc( 50% - var(--height)/2 );
+    left: calc( 50% - var(--width)/2 );
+    padding: 10px 50px;
+    z-index: 11;
+}
+#loginForm h2 {
+    font-family: Arial, sans-serif;
+    font-size: 140%;
+}
+#loginForm input {
+    width: 100%;
+    height: 2rem;
+    font-size: 110%;
+    margin-bottom: 20px;
+}
+#loginInput {
+    color: white;
+    background-color: #007241;
+    font-size: 90% !important;
+    border: 1px solid #007241;
+    border-radius: 6px;
+}
+#forgotLink {
+    font-size: 80%;
+    color: #341ec3;
+}
+.or {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.or hr {
+    width: 100%;
+    color: silver;
+}
+.or span {
+    margin-bottom: 3px;
+}
+#loginGoogle {
+    background-color: white;
+    border: 1px solid silver;
+    font-size: 90% !important;
+}
+#loginFB {
+    color: white;
+    background-color: #1d649e;
+    font-size: 90% !important;
+}
+
+@media screen and (max-width:767px) {  /* Smartphone */
+    html, body {  /* plug */
+        display: none;
+    }
+}
